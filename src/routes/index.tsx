@@ -25,6 +25,7 @@ const FILTERS = ["All", "Sedan", "SUV", "Truck", "Coupe", "Minivan"] as const;
 
 const PUBLIC_INVENTORY_API = import.meta.env.VITE_PUBLIC_INVENTORY_API ?? "https://marketplace-system-lf78.onrender.com";
 const DEALER_SLUG = import.meta.env.VITE_DEALER_SLUG ?? "hummel-auto-sales";
+const FINANCING_URL = "#contact";
 const DEFAULT_DEALER = {
   name: "Hummel Auto Sales LLC",
   phone: "7177613149",
@@ -157,7 +158,9 @@ function Index() {
           <nav className="hidden items-center justify-center gap-8 text-sm font-medium md:flex">
             {[
               { href: "#inventory", label: "Inventory" },
+              { href: "#financing", label: "Financing" },
               { href: "#about", label: "About" },
+              { href: "#reviews", label: "Reviews" },
               { href: "#contact", label: "Contact" },
             ].map((l) => (
               <a
@@ -313,6 +316,71 @@ function Index() {
         )}
       </section>
 
+      {/* Financing */}
+      <section id="financing" className="border-b border-border bg-background py-16">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:items-center">
+          <div>
+            <span className="text-sm font-semibold uppercase tracking-wider text-primary">Financing available</span>
+            <h2 className="mt-2 max-w-2xl text-3xl font-bold tracking-tight md:text-5xl">
+              Ask about financing for your next vehicle.
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+              Hummel Auto Sales LLC can walk you through available financing options and next steps through their third-party financing partners.
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg" className="h-12 shadow-md shadow-primary/25">
+                <a href={FINANCING_URL}>
+                  <FileCheck className="mr-2 h-4 w-4" />Ask About Financing
+                </a>
+              </Button>
+              {dealerPhone && (
+                <Button asChild size="lg" variant="outline" className="h-12">
+                  <a href={`tel:${dealerPhone}`}><Phone className="mr-2 h-4 w-4" />Call {dealerPhoneText}</a>
+                </Button>
+              )}
+            </div>
+            <p className="mt-3 text-sm font-medium text-muted-foreground">Call or text first and the team can help you get started.</p>
+          </div>
+
+          <div className="rounded-xl border border-border bg-card p-5 shadow-sm">
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-lg bg-muted p-4">
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <ShieldCheck className="h-5 w-5" />
+                </div>
+                <h3 className="font-bold">What You May Need</h3>
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                  <li>Current address and contact info</li>
+                  <li>Employer and income details</li>
+                  <li>Valid ID and basic application information</li>
+                  <li>Optional co-applicant information</li>
+                </ul>
+              </div>
+              <div className="rounded-lg bg-muted p-4">
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <DollarSign className="h-5 w-5" />
+                </div>
+                <h3 className="font-bold">What Happens Next</h3>
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                  <li>Contact the dealership</li>
+                  <li>Review available financing options</li>
+                  <li>Choose a vehicle and finalize details</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
+              <div className="font-bold text-primary">Simple and straightforward</div>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Have a vehicle in mind? Ask Hummel Auto Sales LLC about financing and what information to bring.
+              </p>
+              <Button asChild className="mt-4 w-full">
+                <a href={FINANCING_URL}>Contact About Financing</a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About */}
       <section id="about" className="bg-muted/40 py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-2 md:items-center">
@@ -350,6 +418,62 @@ function Index() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Reviews */}
+      <section id="reviews" className="bg-zinc-950 py-20 text-white">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-12 text-center">
+            <div className="mb-4 flex justify-center gap-1.5">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star
+                  key={i}
+                  className="h-8 w-8 fill-amber-400 text-amber-400 drop-shadow-[0_0_12px_rgba(251,191,36,0.65)] transition-transform hover:-translate-y-1 hover:scale-125"
+                  style={{ animation: "star-pop 1.8s ease-in-out infinite", animationDelay: `${i * 120}ms` }}
+                />
+              ))}
+            </div>
+            <span className="text-sm font-semibold uppercase tracking-wider text-primary">Reviews</span>
+            <h2 className="mt-1 text-3xl font-bold tracking-tight md:text-4xl">
+              What customers say
+            </h2>
+            <p className="mt-3 text-zinc-400">Real feedback from local buyers and customers.</p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              { name: "Wilson Talavera", text: "Purchased my Dodge Ram from this place. I have had it for almost a year and have not had a problem yet. I love my Dodge and use it daily for work." },
+              { name: "iishababy101", text: "Love my car. I have had it for 7 months with no major issues. I found them on Marketplace and they work with you." },
+              { name: "Ahmed Foda", text: "Super reliable and skilled mechanic. Fixed my car quickly and explained everything clearly. Honest pricing and great service." },
+              { name: "Abdelillah Moubarik", text: "They are very nice. Excellent service." },
+            ].map((review) => (
+              <div
+                key={review.name}
+                className="flex min-h-[220px] flex-col rounded-xl border border-white/10 bg-white/[0.04] p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:bg-white/[0.06]"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-primary text-lg font-black uppercase text-primary-foreground shadow-md shadow-primary/30">
+                    {review.name[0]}
+                  </div>
+                  <div className="min-w-0 font-bold">{review.name}</div>
+                </div>
+                <div className="mt-4 flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4.5 w-4.5 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-zinc-300">"{review.text}"</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <style>{`
+          @keyframes star-pop {
+            0%, 100% { transform: translateY(0) scale(1); }
+            35% { transform: translateY(-6px) scale(1.18); }
+            55% { transform: translateY(0) scale(1); }
+          }
+        `}</style>
       </section>
 
       {/* Contact */}
