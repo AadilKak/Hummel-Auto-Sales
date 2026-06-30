@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Marketplace Inventory Sync",
+  "version": "2.0",
+  "description": "Syncs Facebook Marketplace inventory through the dealer service.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "alarms",
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.facebook.com/*",
+    "https://*.fbcdn.net/*",
+    "https://marketplace-system-lf78.onrender.com/*"
+  ]
+}
