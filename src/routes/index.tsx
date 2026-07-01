@@ -25,7 +25,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import heroImg from "@/assets/hero-cars.jpg";
-import dealerLogo from "@/assets/dealer-logo.webp";
+import dealerLogo from "@/assets/dealer-logo.png";
 import { useQuery } from "@tanstack/react-query";
 
 export const Route = createFileRoute("/")({
@@ -891,11 +891,11 @@ function Index() {
 
 function DealerLogo() {
   return (
-    <span className="flex h-12 w-[6.8rem] shrink-0 items-center overflow-visible sm:w-[8.2rem]">
+    <span className="flex h-12 w-[8rem] shrink-0 items-center overflow-visible sm:w-[9.5rem]">
       <img
         src={dealerLogo}
         alt="Hummel Auto Sales LLC"
-        className="h-12 w-auto origin-left scale-125 object-contain"
+        className="h-12 w-auto origin-left object-contain"
         style={{ maxWidth: "none" }}
       />
     </span>
