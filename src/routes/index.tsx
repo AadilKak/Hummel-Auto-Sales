@@ -894,8 +894,8 @@ function DealerLogo() {
     <img
       src={dealerLogo}
       alt="Hummel Auto Sales LLC"
-      className="h-11 w-auto shrink-0 object-contain sm:h-12"
-      style={{ maxWidth: "32vw" }}
+      className="h-14 w-auto shrink-0 object-contain sm:h-16"
+      style={{ maxWidth: "40vw" }}
     />
   );
 }
