@@ -58,7 +58,7 @@
 :root {
   --radius: 0.5rem;
 
-  /* Pro dealer palette: subtle black-navy + logo red accent. */
+  /* Pro dealer palette: deep logo blue + red accent. */
   --background: oklch(0.99 0.003 80);
   --foreground: oklch(0.16 0.01 80);
   --ink: oklch(0.13 0.008 80);
@@ -70,8 +70,8 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.14 0.008 80);
 
-  /* Primary = near-black with a quiet blue undertone */
-  --primary: oklch(0.18 0.035 258);
+  /* Primary = deep blue */
+  --primary: oklch(0.28 0.14 258);
   --primary-foreground: oklch(0.99 0.003 80);
 
   --secondary: oklch(0.94 0.006 80);
@@ -91,7 +91,7 @@
   --input: oklch(0.9 0.006 80);
   --ring: oklch(0.83 0.17 86 / 50%);
 
-  --chart-1: oklch(0.18 0.035 258);
+  --chart-1: oklch(0.28 0.14 258);
   --chart-2: oklch(0.58 0.23 27);
   --chart-3: oklch(0.6 0.05 80);
   --chart-4: oklch(0.4 0.02 80);
