@@ -891,12 +891,14 @@ function Index() {
 
 function DealerLogo() {
   return (
-    <img
-      src={dealerLogo}
-      alt="Hummel Auto Sales LLC"
-      className="h-14 w-auto shrink-0 object-contain sm:h-16"
-      style={{ maxWidth: "40vw" }}
-    />
+    <span className="flex h-12 w-[6.8rem] shrink-0 items-center overflow-visible sm:w-[8.2rem]">
+      <img
+        src={dealerLogo}
+        alt="Hummel Auto Sales LLC"
+        className="h-12 w-auto origin-left scale-125 object-contain"
+        style={{ maxWidth: "none" }}
+      />
+    </span>
   );
 }
 
