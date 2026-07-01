@@ -184,7 +184,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-background pb-24 text-foreground md:pb-0">
       {/* ───── TOP INFO BAR ───── */}
-      <div className="hidden bg-neutral-900 text-white/85 md:block">
+      <div className="hidden bg-primary text-white/85 md:block">
         <div className="container-app flex items-center justify-between gap-6 py-2 text-[12px] font-medium">
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5">
@@ -206,7 +206,7 @@ function Index() {
       </div>
 
       {/* ───── NAV ───── */}
-      <header className="sticky top-0 z-40 border-b border-black/80 bg-black text-white">
+      <header className="sticky top-0 z-40 border-b border-primary/80 bg-primary text-white">
         <div className="container-app grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 py-3 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
           <a href="#" className="flex min-w-0 items-center gap-3">
             <DealerLogo />
@@ -272,7 +272,7 @@ function Index() {
           <span className="uppercase tracking-wider">
             Get Pre-Approved with No Impact to Your Credit Score
           </span>
-          <span className="hidden rounded bg-black px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-accent sm:inline-block">
+          <span className="hidden rounded bg-primary px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-accent sm:inline-block">
             Learn More
           </span>
         </div>
@@ -280,7 +280,7 @@ function Index() {
 
 
       {/* ───── HERO ───── */}
-      <section className="relative isolate overflow-hidden bg-black text-white">
+      <section className="relative isolate overflow-hidden bg-primary text-white">
         <img
           src={heroImg}
           alt={`${dealerName} used car inventory`}
@@ -288,8 +288,8 @@ function Index() {
           height={1088}
           className="absolute inset-0 h-full w-full object-cover opacity-55"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/85" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.65)_85%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,color-mix(in_oklab,var(--primary)_70%,transparent)_85%)]" />
 
         <div className="container-app relative flex flex-col items-center py-24 text-center md:py-36">
           <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.22em] text-accent backdrop-blur">
@@ -373,7 +373,7 @@ function Index() {
         </div>
 
         {/* Stats strip */}
-        <div className="relative border-t border-white/10 bg-black/60 backdrop-blur-sm">
+        <div className="relative border-t border-white/10 bg-primary/75 backdrop-blur-sm">
           <dl className="container-app grid grid-cols-3 divide-x divide-white/10 text-center">
             {[
               { k: availableCount > 0 ? `${availableCount}+` : "Live", v: "Vehicles in stock" },
@@ -421,7 +421,7 @@ function Index() {
                   filter === c.filter ? "border-accent shadow-md" : "border-border"
                 }`}
               >
-                <span className="grid h-12 w-12 place-items-center rounded-full bg-black text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                <span className="grid h-12 w-12 place-items-center rounded-full bg-primary text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
                   <Gauge className="h-5 w-5" />
                 </span>
                 <span className="mt-3 font-display text-base font-normal tracking-wider text-ink">
@@ -959,7 +959,7 @@ function VehicleCard({
         <Card className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border-border/80 bg-card p-0 transition-all hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl">
           <div className="relative aspect-[4/3] overflow-hidden bg-muted">
             {v.is_sold ? (
-              <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/55">
+              <div className="absolute inset-0 z-10 flex items-center justify-center bg-primary/60">
                 <span className="rotate-[-18deg] rounded border-4 border-red-500 px-5 py-1 font-display text-2xl font-black tracking-widest text-red-500">
                   SOLD
                 </span>
@@ -981,7 +981,7 @@ function VehicleCard({
               </div>
             )}
             {photos.length > 1 && (
-              <span className="absolute bottom-3 right-3 rounded-full bg-black/70 px-2 py-0.5 text-[10px] font-medium text-white backdrop-blur-sm">
+              <span className="absolute bottom-3 right-3 rounded-full bg-primary/80 px-2 py-0.5 text-[10px] font-medium text-white backdrop-blur-sm">
                 {photos.length} photos
               </span>
             )}
@@ -1011,10 +1011,10 @@ function VehicleCard({
       <DialogContent className="w-[95vw] max-w-5xl gap-0 overflow-hidden border-0 p-0 max-h-[92vh] md:h-[86vh]">
         <div className="flex max-h-[92vh] flex-col overflow-y-auto md:grid md:h-full md:max-h-none md:grid-cols-[1.2fr_1fr] md:overflow-hidden">
           {/* LEFT — gallery */}
-          <div className="flex min-w-0 flex-col bg-black md:min-h-0">
+          <div className="flex min-w-0 flex-col bg-primary md:min-h-0">
             <div className="relative flex min-h-0 flex-1 items-center justify-center">
               {v.is_sold && (
-                <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/40">
+                <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-primary/50">
                   <span className="rotate-[-20deg] rounded border-4 border-red-500 px-5 py-1 text-3xl font-black tracking-widest text-red-500">
                     SOLD
                   </span>
@@ -1054,7 +1054,7 @@ function VehicleCard({
               )}
             </div>
             {photos.length > 1 && (
-              <div className="flex shrink-0 gap-1 bg-black/90 p-2">
+              <div className="flex shrink-0 gap-1 bg-primary/95 p-2">
                 {photos.map((ph, i) => (
                   <button
                     key={i}
