@@ -207,11 +207,11 @@ function Index() {
 
       {/* ───── NAV ───── */}
       <header className="sticky top-0 z-40 border-b border-black/80 bg-black text-white">
-        <div className="container-app grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 py-3 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
-          <a href="#" className="flex min-w-0 items-center gap-3">
+        <div className="container-app grid grid-cols-[max-content_auto] items-center gap-3 py-3 md:grid-cols-[max-content_minmax(0,1fr)_max-content]">
+          <a href="#" className="flex shrink-0 items-center gap-3">
             <DealerLogo />
-            <div className="min-w-0 leading-tight">
-              <div className="font-display truncate text-[clamp(1rem,2.8vw,1.25rem)] font-normal tracking-wide text-white">
+            <div className="shrink-0 leading-tight">
+              <div className="font-display whitespace-nowrap text-[clamp(1rem,2.8vw,1.25rem)] font-normal tracking-wide text-white">
                 {dealerName}
               </div>
               <div className="flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
