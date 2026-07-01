@@ -208,13 +208,13 @@ function Index() {
       {/* ───── NAV ───── */}
       <header className="sticky top-0 z-40 border-b border-black/80 bg-black text-white">
         <div className="container-app grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 py-3 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
-          <a href="#" className="flex min-w-0 items-center gap-2 sm:gap-3">
+          <a href="#" className="flex min-w-0 items-center gap-3">
             <DealerLogo />
             <div className="min-w-0 leading-tight">
-              <div className="font-display whitespace-nowrap text-[clamp(0.92rem,3.7vw,1.25rem)] font-normal tracking-wide text-white">
+              <div className="font-display truncate text-[clamp(1rem,2.8vw,1.25rem)] font-normal tracking-wide text-white">
                 {dealerName}
               </div>
-              <div className="flex min-w-0 items-center gap-1 truncate text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
+              <div className="flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
                 <MapPin className="h-3 w-3" /> {locationText}
               </div>
             </div>
@@ -891,13 +891,12 @@ function Index() {
 
 function DealerLogo() {
   return (
-    <span className="flex h-12 w-[5.25rem] shrink-0 items-center overflow-visible sm:w-[6.75rem] md:w-[8rem]">
-      <img
-        src={dealerLogo}
-        alt="Hummel Auto Sales LLC"
-        className="max-h-12 w-full origin-left object-contain"
-      />
-    </span>
+    <img
+      src={dealerLogo}
+      alt="Hummel Auto Sales LLC"
+      className="h-11 w-auto shrink-0 object-contain sm:h-12"
+      style={{ maxWidth: "32vw" }}
+    />
   );
 }
 
