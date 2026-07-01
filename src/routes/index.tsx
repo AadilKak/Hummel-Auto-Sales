@@ -53,7 +53,7 @@ const FILTERS = ["All", "Sedan", "SUV", "Truck", "Coupe", "Minivan"] as const;
 const PUBLIC_INVENTORY_API =
   import.meta.env.VITE_PUBLIC_INVENTORY_API ?? "https://marketplace-system-lf78.onrender.com";
 const DEALER_SLUG = import.meta.env.VITE_DEALER_SLUG ?? "hummel-auto-sales";
-const FINANCING_URL = "#contact";
+const FINANCING_URL = "https://apply.lendmarkfinancial.com/application";
 const DEFAULT_DEALER = {
   name: "Hummel Auto Sales LLC",
   phone: "7177613149",
@@ -547,22 +547,14 @@ function Index() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="h-12 bg-accent text-accent-foreground shadow-md shadow-accent/25 hover:bg-accent/90">
-                <a href={FINANCING_URL}>
+                <a href={FINANCING_URL} target="_blank" rel="noreferrer">
                   <FileCheck className="mr-2 h-4 w-4" />
-                  Ask About Financing
+                  Apply Through Lendmark
                 </a>
               </Button>
-              {dealerPhone && (
-                <Button asChild size="lg" variant="outline" className="h-12">
-                  <a href={`tel:${dealerPhone}`}>
-                    <Phone className="mr-2 h-4 w-4" />
-                    Call {dealerPhoneText}
-                  </a>
-                </Button>
-              )}
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              Call or text first and the team will help you get started.
+              Financing applications are handled securely through Lendmark.
             </p>
           </div>
 
@@ -583,8 +575,8 @@ function Index() {
                   icon: DollarSign,
                   title: "What Happens Next",
                   items: [
-                    "Contact the dealership",
-                    "Review financing options",
+                    "Apply through Lendmark",
+                    "Review available options",
                     "Choose a vehicle & finalize",
                   ],
                 },
@@ -608,13 +600,13 @@ function Index() {
             <div className="mt-4 rounded-xl bg-primary p-5 text-primary-foreground">
               <div className="font-display font-bold">Simple and straightforward</div>
               <p className="mt-1 text-sm text-primary-foreground/80">
-                Have a vehicle in mind? Ask {dealerName} about financing and what to bring.
+                Have a vehicle in mind? Start the application through Lendmark and then contact {dealerName}.
               </p>
               <Button
                 asChild
                 className="mt-4 w-full bg-accent text-accent-foreground hover:bg-accent/90"
               >
-                <a href={FINANCING_URL}>Contact About Financing</a>
+                <a href={FINANCING_URL} target="_blank" rel="noreferrer">Start Lendmark Application</a>
               </Button>
             </div>
           </div>
