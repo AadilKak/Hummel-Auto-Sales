@@ -263,20 +263,11 @@ function Index() {
       </header>
 
       {/* ───── PROMO STRIP ───── */}
-      <a
-        href="#financing"
-        className="block bg-accent text-accent-foreground transition-colors hover:bg-accent/90"
-      >
-        <div className="container-app flex flex-wrap items-center justify-center gap-3 py-2.5 text-center text-sm font-semibold">
-          <BadgeCheck className="h-4 w-4" />
-          <span className="uppercase tracking-wider">
-            Get Pre-Approved with No Impact to Your Credit Score
-          </span>
-          <span className="hidden rounded bg-black px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-accent sm:inline-block">
-            Learn More
-          </span>
+      <div className="bg-accent text-accent-foreground">
+        <div className="container-app flex items-center justify-center py-2.5 text-center text-sm font-semibold uppercase tracking-wider">
+          Lemoyne, PA
         </div>
-      </a>
+      </div>
 
 
       {/* ───── HERO ───── */}
