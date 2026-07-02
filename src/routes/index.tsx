@@ -263,11 +263,20 @@ function Index() {
       </header>
 
       {/* ───── PROMO STRIP ───── */}
-      <div className="bg-accent text-accent-foreground">
-        <div className="container-app flex items-center justify-center py-2.5 text-center text-sm font-semibold uppercase tracking-wider">
-          Lemoyne, PA
+      <a
+        href="#financing"
+        className="block bg-accent text-accent-foreground transition-colors hover:bg-accent/90"
+      >
+        <div className="container-app flex flex-wrap items-center justify-center gap-3 py-2.5 text-center text-sm font-semibold">
+          <BadgeCheck className="h-4 w-4" />
+          <span className="uppercase tracking-wider">
+            Get Pre-Approved with No Impact to Your Credit Score
+          </span>
+          <span className="hidden rounded bg-black px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-accent sm:inline-block">
+            Learn More
+          </span>
         </div>
-      </div>
+      </a>
 
 
       {/* ───── HERO ───── */}
@@ -283,9 +292,8 @@ function Index() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.65)_85%)]" />
 
         <div className="container-app relative flex flex-col items-center py-24 text-center md:py-36">
-          <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.22em] text-accent backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_10px_currentColor]" />
-            Now Open · {locationText}
+          <span className="inline-flex items-center justify-center rounded-full border border-accent/40 bg-accent/10 px-4 py-1 text-center text-[11px] font-bold uppercase tracking-[0.22em] text-accent backdrop-blur">
+            {locationText}
           </span>
 
           <h1 className="text-balance mt-6 font-display text-[clamp(2.5rem,7vw,5.75rem)] font-normal leading-[0.95] tracking-wide text-white">
